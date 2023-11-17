@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'reservacancha';
+  title = 'Reserva de canchitas';
+
+  tasks = [
+    'Escoge tu cancha',
+    'Elige la fecha',
+    'Datos personales',
+    'Forma de Pago',
+    'Reservado'
+  ]
+
 }
