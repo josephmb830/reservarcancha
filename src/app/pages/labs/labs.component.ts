@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./labs.component.css']
 })
 export class LabsComponent {
+  title = 'Reserva de canchitas';
 
+  tasks = [
+    'Escoge tu cancha',
+    'Elige la fecha',
+    'Datos personales',
+    'Forma de Pago',
+    'Reservado'
+  ]
 }
