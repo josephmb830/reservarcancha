@@ -12,13 +12,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BasicFormComponent } from './admin/components/basic-form/basic-form.component';
+import { LabsComponent } from './pages/labs/labs.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BasicFormComponent,
+    LabsComponent
   ],
   imports: [
     BrowserModule,

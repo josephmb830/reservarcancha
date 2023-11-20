@@ -8,6 +8,11 @@
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="isLinear = !isLinear" id="toggle-linear">
               {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
             </button>
+
+            <h2>{{ 'Escoge tu cancha' }}</h2>
+            <p> El número de canchas disponibles es {{ 3+3 }} </p>
+            <p>El deporte elegido fue {{Deporte}} y el número de participantes es {{Personas}} </p>
+
             <mat-stepper class="bg-gray-200 p-4 rounded" orientation="vertical" [linear]="isLinear" #stepper>
               <!-- Step 1 -->
               <mat-step class="mb-4 bg-white p-4 rounded" [stepControl]="firstFormGroup">
@@ -45,6 +50,9 @@
               <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
             </mat-form-field>
           </div>
+
+          <input type="text" [value]="Deporte">
+          <button [disabled]="disabled">enviar</button>
         
           <div class="mb-4 form-block">
             <mat-form-field>
@@ -60,5 +68,72 @@
           <menu>ruta</menu>
           <footer>pie</footer>
       </section>
+    </div>
+  </section>
+
+  <!-- other section -->
+
+  <section class="todoapp">
+    <header class="header">
+      <div class="container">
+        <h1>My Day</h1>
+        <p>All my tasks in one place</p>
+        <input
+          class="new-todo"
+          placeholder="Type new todo"
+          autofocus
+          type="text"
+        />
+      </div>
+    </header>
+    <div class="container todoapp-wrapper">
+      <!-- This section should be hidden by default and shown when there are todos -->
+      <section class="main">
+        <ul class="todo-list">
+          <li class="completed">
+            <div class="view">
+              <input class="toggle" type="checkbox" checked />
+              <label>Learn JavaScript</label>
+              <button class="destroy"></button>
+            </div>
+            <input class="edit" value="Learn JavaScript" />
+          </li>
+          <li>
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label>Buy a unicorn</label>
+              <button class="destroy"></button>
+            </div>
+            <input class="edit" value="Buy a unicorn" />
+          </li>
+          <li class="editing">
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label>Make dishes</label>
+              <button class="destroy"></button>
+            </div>
+            <input class="edit" value="Make dishes" />
+          </li>
+        </ul>
+      </section>
+      <!-- This footer should be hidden by default and shown when there are todos -->
+      <footer class="footer">
+        <!-- This should be `0 items left` by default -->
+        <span class="todo-count"><strong>0</strong> item left</span>
+        <!-- Remove this if you don't implement routing -->
+        <ul class="filters">
+          <li>
+            <a routerLink="/" class="selected">All</a>
+          </li>
+          <li>
+            <a routerLink="/pending">Pending</a>
+          </li>
+          <li>
+            <a routerLink="/completed">Completed</a>
+          </li>
+        </ul>
+        <!-- Hidden if no completed items are left ↓ -->
+        <button class="clear-completed">Clear completed</button>
+      </footer>
     </div>
   </section>

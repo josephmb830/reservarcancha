@@ -17,4 +17,8 @@ export class HomeComponent {
   isLinear = false;
 
   constructor(private _formBuilder: FormBuilder) {}
+
+  Deporte = 'fútbol';
+  Personas = 12;
+  disabled = true;
 }
