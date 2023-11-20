@@ -1,15 +1,64 @@
 <section>
     <div class="flex justify-center items-center mt-3">
-        <img class="max-w-1/2 transform scale-50" src="https://pagosenlinea.munimagdalena.gob.pe/img/logom.png" alt="logo muni magdalena">
+      <img class="max-w-1/2 transform scale-50" src="https://pagosenlinea.munimagdalena.gob.pe/img/logom.png" alt="logo muni magdalena">
     </div>
     <div class="bg-gray-400 relative w-full m-auto top-[-40px] rounded-lg shadow-md overflow-hidden flex md:w-1/2 md:min-w-[300px] lg:min-w-[400px]">
-        <section class="flex-1 menu bg-yellow-300">
-            <menu>ruta</menu>
-            <footer>pie</footer>   
-        </section>
-        <section class="flex-1 options bg-purple-600">
-            <div>formularios</div>
-            <div>pie</div>
-        </section>
+        <section id="section1" class="flex-1 options bg-F2F2F2">
+            <!-- Angular Material Stepper Code -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="isLinear = !isLinear" id="toggle-linear">
+              {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+            </button>
+            <mat-stepper class="bg-gray-200 p-4 rounded" orientation="vertical" [linear]="isLinear" #stepper>
+              <!-- Step 1 -->
+              <mat-step class="mb-4 bg-white p-4 rounded" [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel class="text-lg font-bold">Fill out your name</ng-template>
+                  <div>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+          
+              <!-- Step 2 -->
+              <mat-step class="mb-4 bg-white p-4 rounded" [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel class="text-lg font-bold">Fill out your address</ng-template>
+                </form>
+              </mat-step>
+          
+              <!-- Step 3 -->
+              <mat-step class="bg-white p-4 rounded">
+                <ng-template matStepLabel class="text-lg font-bold">Done</ng-template>
+                <p class="mb-4">You are now done.</p>
+                <div>
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" mat-button matStepperPrevious>Back</button>
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+              </mat-step>
+            </mat-stepper>
+          </section>
+  
+      <section id="section2" class="flex-1 menu bg-024059">
+        <div class="mb-4 form-block">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+        
+          <div class="mb-4 form-block">
+            <mat-form-field>
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+          </div>
+        
+          <div class="form-block">
+            <!-- Add more form fields if needed -->
+          </div>
+        
+          <menu>ruta</menu>
+          <footer>pie</footer>
+      </section>
     </div>
-</section>
+  </section>
